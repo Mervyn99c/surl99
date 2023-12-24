@@ -1,0 +1,33 @@
+syntax = "v1"
+
+info(
+    title: "type title here"
+    desc: "type desc here"
+    author: "type author here"
+    email: "type email here"
+    version: "type version here"
+)
+//type LurlDTO {
+//    Lurl string `json:"surl"`
+//    UpdateBy string `json:"updateBy"`
+//    EffectiveDays int64 `json:"effectiveDays"`
+//}
+
+type GenerateRequest {
+    Lurl string `json:"lurl"`
+    UpdateBy string `json:"updateBy"`
+    EffectiveDays int32 `json:"effectiveDays"`
+}
+
+type GenerateResponse {
+ Surl string `json:"surl"`
+}
+
+@server(
+//    jwt: Auth
+    group: admin
+)
+service api-api {
+    @handler GenerateHandler
+    post /generate (GenerateRequest) returns (GenerateResponse)
+}

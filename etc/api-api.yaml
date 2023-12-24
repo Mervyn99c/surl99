@@ -1,0 +1,27 @@
+Name: api-api
+Host: 0.0.0.0
+Port: 8888
+
+# 节点编号
+NodeNum: 1
+
+Auth:
+  AccessSecret: uOvKLmVfztaXGpNYd4Z0I1SiT7MweJhl
+  AccessExpire: 86400
+
+DataSource: root:root@tcp(127.0.0.1:3306)/surl?parseTime=true
+
+# 限流
+MaxConns: 100
+
+CacheRedis:
+  - Host: 127.0.0.1:6379
+    Pass:
+    Type: node
+
+
+BizRedis:
+  Host: 127.0.0.1:6379
+  Pass:
+  Type: node
+
